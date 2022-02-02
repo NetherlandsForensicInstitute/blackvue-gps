@@ -1,11 +1,6 @@
-FROM ubuntu
+FROM python
 
-ENV DEBIAN_FRONTEND noninteractive
-
-RUN apt update
-RUN apt install -y python3-dev python3-pip
-
-RUN python3 -m pip install --no-cache blackclue blackvue_gps hansken_extraction_plugin
+RUN python -m pip install --no-cache blackclue blackvue_gps hansken_extraction_plugin
 
 LABEL maintainer="fbda@nfi.nl"
 LABEL hansken.extraction.plugin.image="blackvue"
